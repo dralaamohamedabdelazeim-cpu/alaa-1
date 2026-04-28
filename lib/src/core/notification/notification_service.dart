@@ -112,7 +112,9 @@ class NotificationService {
       {required int id,
       required String title,
       required String body,
-      required Duration duration}) async {
+      required Duration duration,
+String soundName = 'slow_spring_board',
+}) async {
     /// android customisation notification
     AndroidNotificationDetails androidPlatformChannelSpecifics =
         AndroidNotificationDetails(
@@ -121,7 +123,7 @@ class NotificationService {
       // 'Notification to tell user that it is time for Muslim prayer.',
       importance: Importance.max,
       //icon:
-      sound: RawResourceAndroidNotificationSound('slow_spring_board'),
+      sound: RawResourceAndroidNotificationSound(soundName),
       // when:
       ticker: 'Prayer Timing',
       visibility: NotificationVisibility.public,
